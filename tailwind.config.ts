@@ -61,6 +61,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				finwise: {
+					green: {
+						light: '#81C784',
+						DEFAULT: '#4CAF50',
+						dark: '#2E7D32'
+					},
+					blue: {
+						light: '#3949AB',
+						DEFAULT: '#1A237E',
+						dark: '#0D1B5E'
+					},
+					gray: {
+						light: '#F5F7FA',
+						DEFAULT: '#E8EDF2',
+						dark: '#C5CCD6'
+					}
 				}
 			},
 			borderRadius: {
