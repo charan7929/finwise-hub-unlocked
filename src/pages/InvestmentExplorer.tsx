@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Wallet, Info } from "lucide-react";
+import { Wallet, Info, PieChartIcon, LineChart, BarChart3, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ComparisonView from "@/components/investment-explorer/ComparisonView";
 import MutualFundCard from "@/components/investment-explorer/MutualFundCard";
@@ -9,10 +9,10 @@ import InvestmentTypeCard from "@/components/investment-explorer/InvestmentTypeC
 
 // Mock data for demonstration purposes
 const INVESTMENT_TYPES = [
-  { id: "mutual_funds", name: "Mutual Funds", icon: PieChart },
-  { id: "sips", name: "Systematic Investment Plans", icon: ChartLine },
-  { id: "etfs", name: "Exchange Traded Funds", icon: BarChartIcon },
-  { id: "bonds", name: "Bonds & Fixed Income", icon: ShieldCheck },
+  { id: "mutual_funds", name: "Mutual Funds", icon: PieChartIcon },
+  { id: "sips", name: "Systematic Investment Plans", icon: LineChart },
+  { id: "etfs", name: "Exchange Traded Funds", icon: BarChart3 },
+  { id: "bonds", name: "Bonds & Fixed Income", icon: Shield },
 ];
 
 const MUTUAL_FUNDS = [
@@ -212,7 +212,6 @@ const BONDS = [
   },
 ];
 
-// Chart data for investment growth comparison
 const growthComparisonData = [
   { year: "2023", fund1: 10000, fund2: 10000 },
   { year: "2024", fund1: 11200, fund2: 10800 },
@@ -283,7 +282,6 @@ const InvestmentExplorer = () => {
       <h1 className="text-3xl font-bold mb-2 text-finwise-blue">Investment Explorer</h1>
       <p className="text-muted-foreground mb-6">Learn about different investment options and simulate your returns</p>
 
-      {/* FinCoin Balance */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center bg-finwise-green bg-opacity-10 p-3 rounded-lg">
           <Wallet className="text-finwise-green mr-2" />
@@ -293,7 +291,6 @@ const InvestmentExplorer = () => {
           </div>
         </div>
 
-        {/* Compare Button */}
         <div className="flex items-center space-x-2">
           <Button
             variant={showCompare ? "default" : "outline"}
@@ -322,7 +319,6 @@ const InvestmentExplorer = () => {
         </div>
       )}
 
-      {/* Investment Types Tabs */}
       <Tabs defaultValue="mutual_funds" value={selectedInvestmentType} onValueChange={setSelectedInvestmentType} className="mb-6">
         <TabsList className="w-full grid grid-cols-4">
           {INVESTMENT_TYPES.map((type) => (
@@ -332,7 +328,6 @@ const InvestmentExplorer = () => {
           ))}
         </TabsList>
 
-        {/* Comparison View */}
         <ComparisonView
           selectedFunds={selectedFunds}
           growthComparisonData={growthComparisonData}
@@ -341,7 +336,6 @@ const InvestmentExplorer = () => {
           onClearSelection={() => setSelectedFunds([])}
         />
 
-        {/* Mutual Funds Tab Content */}
         <TabsContent value="mutual_funds">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {MUTUAL_FUNDS.map((fund) => (
@@ -359,7 +353,6 @@ const InvestmentExplorer = () => {
           </div>
         </TabsContent>
 
-        {/* Other tab contents would go here */}
         <TabsContent value="sips">
           {/* Similar structure for SIPs */}
         </TabsContent>

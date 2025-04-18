@@ -6,6 +6,7 @@ import ChatbotWidget from "@/components/home/ChatbotWidget";
 import FinancialTip from "@/components/home/FinancialTip";
 import NewsFeed from "@/components/home/NewsFeed";
 import GameTeaser from "@/components/home/GameTeaser";
+import FinanceFeatures from "@/components/home/FinanceFeatures";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,9 @@ const Index = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <HeroSection />
+        
+        {/* Finance Features Section */}
+        <FinanceFeatures />
         
         {/* Main Content */}
         <section className="py-16">
