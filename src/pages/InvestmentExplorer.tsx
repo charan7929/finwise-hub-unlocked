@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -6,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import ComparisonView from "@/components/investment-explorer/ComparisonView";
 import MutualFundCard from "@/components/investment-explorer/MutualFundCard";
 import InvestmentTypeCard from "@/components/investment-explorer/InvestmentTypeCard";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 
 // Mock data for demonstration purposes
 const INVESTMENT_TYPES = [
@@ -247,6 +250,7 @@ const InvestmentExplorer = () => {
   const [showCompare, setShowCompare] = useState(false);
   const [selectedFunds, setSelectedFunds] = useState<string[]>([]);
   const [investmentAmount, setInvestmentAmount] = useState("1000");
+  const [accountBalance, setAccountBalance] = useState("10,000.00");
 
   const getInvestmentData = () => {
     switch (selectedInvestmentType) {
@@ -280,14 +284,14 @@ const InvestmentExplorer = () => {
   return (
     <div className="container mx-auto py-6 max-w-7xl">
       <h1 className="text-3xl font-bold mb-2 text-finwise-blue">Investment Explorer</h1>
-      <p className="text-muted-foreground mb-6">Learn about different investment options and simulate your returns</p>
+      <p className="text-muted-foreground mb-6">Explore real investment options and plan your financial future</p>
 
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center bg-finwise-green bg-opacity-10 p-3 rounded-lg">
           <Wallet className="text-finwise-green mr-2" />
           <div>
-            <p className="text-sm text-finwise-blue">FinCoin Balance</p>
-            <p className="text-2xl font-bold text-finwise-green">FC 10,000</p>
+            <p className="text-sm text-finwise-blue">Account Balance</p>
+            <p className="text-2xl font-bold text-finwise-green">${accountBalance}</p>
           </div>
         </div>
 

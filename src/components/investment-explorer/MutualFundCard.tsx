@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
 import { BookOpen } from 'lucide-react';
+import { toast } from "@/components/ui/sonner";
 
 interface MutualFundCardProps {
   fund: any;
@@ -27,6 +28,13 @@ const MutualFundCard = ({
   investmentAmount,
   onInvestmentAmountChange
 }: MutualFundCardProps) => {
+  const handleInvest = () => {
+    toast.success(`Investment of $${investmentAmount} in ${fund.name} initiated!`, {
+      description: "Please complete the transaction process.",
+      duration: 5000,
+    });
+  };
+
   return (
     <Card className={`${selectedFunds.includes(fund.id) ? 'ring-2 ring-finwise-blue' : ''}`}>
       <CardHeader>
@@ -177,8 +185,11 @@ const MutualFundCard = ({
           <BookOpen className="mr-2 h-4 w-4" />
           Learn More
         </Button>
-        <Button className="w-[48%] bg-finwise-green hover:bg-finwise-green/90">
-          Invest FinCoins
+        <Button 
+          className="w-[48%] bg-finwise-green hover:bg-finwise-green/90"
+          onClick={handleInvest}
+        >
+          Invest Now
         </Button>
       </CardFooter>
     </Card>

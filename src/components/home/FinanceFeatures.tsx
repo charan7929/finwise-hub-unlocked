@@ -10,7 +10,7 @@ const FinanceFeatures = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-finwise-blue text-center">
-          Learn & Trade with Virtual Currency
+          Learn & Invest with Real Money
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -20,22 +20,22 @@ const FinanceFeatures = () => {
               <div className="w-12 h-12 bg-finwise-green-light/20 rounded-full flex items-center justify-center mb-4">
                 <ChartLine className="h-6 w-6 text-finwise-green" />
               </div>
-              <CardTitle>Stock Market Simulator</CardTitle>
-              <CardDescription>Trade virtual stocks with FinCoins</CardDescription>
+              <CardTitle>Stock Market Trading</CardTitle>
+              <CardDescription>Trade real stocks with your investment capital</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center">
                   <Wallet className="mr-2 h-4 w-4" />
-                  Virtual portfolio management
+                  Real portfolio management
                 </li>
                 <li className="flex items-center">
                   <ChartLine className="mr-2 h-4 w-4" />
-                  Real-time market simulation
+                  Live market data
                 </li>
                 <li className="flex items-center">
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Learn trading basics risk-free
+                  Professional trading tools
                 </li>
               </ul>
               <Link to="/stock-market">
@@ -53,21 +53,21 @@ const FinanceFeatures = () => {
                 <BookOpen className="h-6 w-6 text-finwise-green" />
               </div>
               <CardTitle>Investment Explorer</CardTitle>
-              <CardDescription>Learn about different investment options</CardDescription>
+              <CardDescription>Discover real investment opportunities</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center">
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Explore mutual funds, ETFs & more
+                  Research mutual funds, ETFs & more
                 </li>
                 <li className="flex items-center">
                   <ChartLine className="mr-2 h-4 w-4" />
-                  Compare investment performance
+                  Analyze investment performance
                 </li>
                 <li className="flex items-center">
                   <Wallet className="mr-2 h-4 w-4" />
-                  Build mock investment portfolios
+                  Build diversified portfolios
                 </li>
               </ul>
               <Link to="/investment-explorer">

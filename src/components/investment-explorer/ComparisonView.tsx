@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from "@/components/ui/button";
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
+import { toast } from "@/components/ui/sonner";
 
 interface ComparisonViewProps {
   selectedFunds: string[];
@@ -21,6 +22,13 @@ const ComparisonView = ({
   onClearSelection
 }: ComparisonViewProps) => {
   if (selectedFunds.length === 0) return null;
+
+  const handleInvestInBoth = () => {
+    toast.success("Investment request submitted!", {
+      description: "You'll be guided through the process for each selected fund.",
+      duration: 5000,
+    });
+  };
 
   return (
     <div className="mb-8 mt-6">
@@ -123,13 +131,13 @@ const ComparisonView = ({
                   ))}
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 font-medium">1-Year Growth (FC 1,000)</td>
+                  <td className="py-2 px-4 font-medium">1-Year Growth ($1,000)</td>
                   {getSelectedFundsData().map((fund) => {
                     const returnRate = "oneYear" in fund ? fund.oneYear : "performance" in fund ? fund.performance[fund.performance.length - 1].return : 10;
                     const growth = 1000 * (1 + returnRate / 100);
                     return (
                       <td key={fund.id} className="py-2 px-4 font-semibold">
-                        FC {growth.toFixed(2)} <span className="text-green-600 text-xs">(+{returnRate}%)</span>
+                        ${growth.toFixed(2)} <span className="text-green-600 text-xs">(+{returnRate}%)</span>
                       </td>
                     );
                   })}
@@ -138,8 +146,16 @@ const ComparisonView = ({
             </table>
           </div>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex justify-between">
           <Button variant="outline" onClick={onClearSelection}>Clear Selection</Button>
+          {selectedFunds.length > 1 && (
+            <Button 
+              className="bg-finwise-green hover:bg-finwise-green/90"
+              onClick={handleInvestInBoth}
+            >
+              Invest in Both
+            </Button>
+          )}
         </CardFooter>
       </Card>
     </div>
