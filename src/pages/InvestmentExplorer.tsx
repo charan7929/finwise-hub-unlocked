@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -540,7 +539,7 @@ const InvestmentExplorer = () => {
                             />
                             <Bar
                               dataKey="return"
-                              fill={(entry) => (entry.return >= 0 ? "#4ade80" : "#ef4444")}
+                              fill="#4ade80"
                               radius={[2, 2, 0, 0]}
                             />
                           </RBarChart>
