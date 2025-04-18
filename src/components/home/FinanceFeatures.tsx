@@ -10,32 +10,32 @@ const FinanceFeatures = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-finwise-blue text-center">
-          Learn & Invest with Real Money
+          Invest in Indian Markets
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Stock Market Trading Card */}
+          {/* NSE/BSE Trading Card */}
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="w-12 h-12 bg-finwise-green-light/20 rounded-full flex items-center justify-center mb-4">
                 <ChartLine className="h-6 w-6 text-finwise-green" />
               </div>
-              <CardTitle>Stock Market Trading</CardTitle>
-              <CardDescription>Trade real stocks with your investment capital</CardDescription>
+              <CardTitle>NSE/BSE Trading</CardTitle>
+              <CardDescription>Trade on India's leading stock exchanges</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center">
                   <Wallet className="mr-2 h-4 w-4" />
-                  Real portfolio management
+                  Trade NSE & BSE stocks
                 </li>
                 <li className="flex items-center">
                   <ChartLine className="mr-2 h-4 w-4" />
-                  Live market data
+                  Real-time market data
                 </li>
                 <li className="flex items-center">
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Professional trading tools
+                  SEBI-compliant trading
                 </li>
               </ul>
               <Link to="/stock-market">
@@ -46,28 +46,28 @@ const FinanceFeatures = () => {
             </CardContent>
           </Card>
 
-          {/* Investment Explorer Card */}
+          {/* Indian Investment Explorer Card */}
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="w-12 h-12 bg-finwise-green-light/20 rounded-full flex items-center justify-center mb-4">
                 <BookOpen className="h-6 w-6 text-finwise-green" />
               </div>
-              <CardTitle>Investment Explorer</CardTitle>
-              <CardDescription>Discover real investment opportunities</CardDescription>
+              <CardTitle>Indian Investment Options</CardTitle>
+              <CardDescription>Explore diverse Indian investment opportunities</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center">
                   <BookOpen className="mr-2 h-4 w-4" />
-                  Research mutual funds, ETFs & more
+                  Mutual Funds, SIPs & FDs
                 </li>
                 <li className="flex items-center">
                   <ChartLine className="mr-2 h-4 w-4" />
-                  Analyze investment performance
+                  Compare performance metrics
                 </li>
                 <li className="flex items-center">
                   <Wallet className="mr-2 h-4 w-4" />
-                  Build diversified portfolios
+                  Tax-saving ELSS funds
                 </li>
               </ul>
               <Link to="/investment-explorer">
